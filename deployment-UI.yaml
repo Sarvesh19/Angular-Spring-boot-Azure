@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-app-deployment
+spec:
+  replicas: 3  # Adjust the number of replicas as needed
+  selector:
+    matchLabels:
+      app: web-app
+  template:
+    metadata:
+      labels:
+        app: web-app
+    spec:
+      containers:
+        - name: web-app-container
+          image: devopsspring.azurecr.io/web-app:latest  # Image pulled from ACR
+          ports:
+            - containerPort: 80  # Adjust the port if needed
+      imagePullSecrets:
+        - name: acr-secret
