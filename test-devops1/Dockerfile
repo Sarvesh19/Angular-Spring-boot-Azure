@@ -56,3 +56,5 @@ CMD ["java", "-jar", "dev-spring-boot-app.jar"]
 #docker-compose -f docker-compose.yml build
 
 #docker-compose -f docker-compose.yml push
+
+#kubectl rollout restart deployment spring-boot-app-1
